@@ -16,5 +16,7 @@ namespace SSGrossary.Infranstructure
 
         public DbSet<District> Districts { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
     }
 }
