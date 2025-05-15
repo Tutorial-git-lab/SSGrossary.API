@@ -14,5 +14,7 @@ namespace SSGrossary.Infranstructure
 
         public DbSet<State> States { get; set; }
 
+        public DbSet<District> Districts { get; set; }
+
     }
 }

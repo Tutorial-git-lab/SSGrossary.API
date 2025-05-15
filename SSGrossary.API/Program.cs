@@ -10,6 +10,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServe
 
 builder.Services.AddScoped<ICountry,CountryRepository>();
 builder.Services.AddScoped<IState,StateRepository>();
+builder.Services.AddScoped<IDistrict, DistrictRepository>();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
