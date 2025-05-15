@@ -9,6 +9,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServe
 // Add services to the container.
 
 builder.Services.AddScoped<ICountry,CountryRepository>();
+builder.Services.AddScoped<IState,StateRepository>();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 

@@ -12,5 +12,7 @@ namespace SSGrossary.Infranstructure
 
         public DbSet<Country> Countries { get; set; }
 
+        public DbSet<State> States { get; set; }
+
     }
 }
