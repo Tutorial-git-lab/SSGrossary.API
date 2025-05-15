@@ -22,8 +22,4 @@
     <ProjectReference Include="..\SSGrossary.Infranstructure\SSGrossary.Infranstructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
-
 </Project>
