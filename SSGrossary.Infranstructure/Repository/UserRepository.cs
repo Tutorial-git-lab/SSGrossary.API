@@ -29,6 +29,8 @@ namespace SSGrossary.Infranstructure.Repository
         {
             var user=_context.Users.FirstOrDefault(x=>x.Email == loginRequest.Email && x.Password==loginRequest.Password);
             return user;
+
+            
         }   
     }
 }
