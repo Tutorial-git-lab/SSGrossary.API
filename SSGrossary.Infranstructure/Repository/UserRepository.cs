@@ -1,4 +1,6 @@
-﻿using SSGrossary.Domain.Entities;
+﻿using SSGrossary.Application.DTO;
+using SSGrossary.Domain.Entities;
+using SSGrossary.Domain.Interfaces;
 
 namespace SSGrossary.Infranstructure.Repository
 {
@@ -11,6 +13,11 @@ namespace SSGrossary.Infranstructure.Repository
             
         }
 
+        public List<User> GetAll()
+        {
+            return _context.Users.ToList();
+        }
+
         public bool Add(User user)
         {
             _context.Users.Add(user);
@@ -18,24 +25,10 @@ namespace SSGrossary.Infranstructure.Repository
             return true;
         }
 
-        public bool Delete(int Id)
+        public User Login(LoginRequest loginRequest)
         {
-            var user = _context.Users.Find();
-            _context.Users.Remove(user);
-            _context.SaveChanges();
-            return true;
-        }
-
-        public List<User> GetAll()
-        {
-            return _context.Users.ToList();
-        }
-
-        public bool Update(User user)
-        {
-            _context.Users.Update(user);
-            _context.SaveChanges();
-            return true;
-        }
+            var user=_context.Users.FirstOrDefault(x=>x.Email == loginRequest.Email && x.Password==loginRequest.Password);
+            return user;
+        }   
     }
 }

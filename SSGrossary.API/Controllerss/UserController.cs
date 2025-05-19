@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using SSGrossary.Application.DTO;
 using SSGrossary.Domain.Entities;
+using SSGrossary.Domain.Interfaces;
 using SSGrossary.Infranstructure.Repository;
+using LoginRequest = SSGrossary.Application.DTO.LoginRequest;
 
 namespace SSGrossary.API.Controllerss
 {
@@ -28,16 +32,11 @@ namespace SSGrossary.API.Controllerss
             return Ok(_user.Add(user));
         }
 
-        [HttpPut("UpdateUser")]
-        public IActionResult UpdateUser(User user)
+        [HttpPost("Login")]
+        public IActionResult Login(LoginRequest loginRequest)
         {
-            return Ok(_user.Update(user));
-        }
-
-        [HttpDelete("DeleteUser")]
-        public IActionResult DeleteUser(int Id)
-        {
-            return Ok(_user.Delete(Id));
+            _user.Login(loginRequest);
+            return Ok("LoggedIn successfully");
         }
 
     }
