@@ -1,5 +1,4 @@
-﻿using SSGrossary.Application.DTO;
-using SSGrossary.Domain.Entities;
+﻿using SSGrossary.Domain.Entities;
 
 namespace SSGrossary.Domain.Interfaces
 {
@@ -9,6 +8,8 @@ namespace SSGrossary.Domain.Interfaces
 
         bool Add(User  user);
 
-        User Login(LoginRequest loginRequest);
+        User GetById(int Id);
+
+        User Login(string email,string password);
     }
 }

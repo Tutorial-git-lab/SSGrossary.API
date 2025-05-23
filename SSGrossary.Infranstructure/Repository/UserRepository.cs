@@ -1,5 +1,4 @@
-﻿using SSGrossary.Application.DTO;
-using SSGrossary.Domain.Entities;
+﻿using SSGrossary.Domain.Entities;
 using SSGrossary.Domain.Interfaces;
 
 namespace SSGrossary.Infranstructure.Repository
@@ -25,12 +24,14 @@ namespace SSGrossary.Infranstructure.Repository
             return true;
         }
 
-        public User Login(LoginRequest loginRequest)
+        public User Login(string email, string password)
         {
-            var user=_context.Users.FirstOrDefault(x=>x.Email == loginRequest.Email && x.Password==loginRequest.Password);
-            return user;
+            return _context.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
+        }
 
-            
-        }   
+        public User GetById(int Id)
+        {
+            return _context.Users.Find(Id);
+        }
     }
 }
