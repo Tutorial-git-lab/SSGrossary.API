@@ -30,4 +30,8 @@
     <ProjectReference Include="..\SSGrossary.Infranstructure\SSGrossary.Infranstructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\Response\" />
+  </ItemGroup>
+
 </Project>
